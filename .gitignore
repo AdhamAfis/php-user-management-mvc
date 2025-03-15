@@ -1,0 +1,60 @@
+# SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+
+# PHP dependencies
+/vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.log
+*.cache
+*.tmp
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Session files
+/sessions/
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip 
