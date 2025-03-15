@@ -18,7 +18,8 @@ $routes = [
     '/login' => '/app/views/login.php',
     '/register' => '/app/views/register.php',
     '/dashboard' => '/app/views/dashboard.php',
-    '/logout' => '/app/views/logout.php'
+    '/logout' => '/app/views/logout.php',
+    '/edit_user' => '/app/views/edit_user.php',
 ];
 
 // Check if route exists
