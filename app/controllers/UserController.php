@@ -17,6 +17,7 @@ class UserController {
     public function update($id, $data) {
         AuthMiddleware::isAuthenticated();
         
+        error_log('Update called with ID: ' . $id . ' and data: ' . json_encode($data));
         $errors = [];
         if (empty($data['name'])) {
             $errors[] = "Name is required";
@@ -27,11 +28,14 @@ class UserController {
 
         if (empty($errors)) {
             if ($this->userModel->update($id, $data)) {
+                error_log('User updated successfully');
                 return ['success' => true, 'message' => 'User updated successfully'];
             }
+            error_log('Failed to update user');
             return ['success' => false, 'message' => 'Failed to update user'];
         }
 
+        error_log('Validation errors: ' . json_encode($errors));
         return ['success' => false, 'errors' => $errors];
     }
 
@@ -42,5 +46,10 @@ class UserController {
             return ['success' => true, 'message' => 'User deleted successfully'];
         }
         return ['success' => false, 'message' => 'Failed to delete user'];
+    }
+
+    public function getUserById($id) {
+        AuthMiddleware::isAuthenticated();
+        return $this->userModel->findById($id);
     }
 }
