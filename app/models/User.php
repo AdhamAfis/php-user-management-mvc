@@ -57,4 +57,13 @@ class User {
         
         return $stmt->execute();
     }
+
+    public function findById($id) {
+        $query = "SELECT * FROM users WHERE id = :id LIMIT 1";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+        $result = $stmt->execute();
+        
+        return $result->fetchArray(SQLITE3_ASSOC);
+    }
 }
