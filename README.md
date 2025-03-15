@@ -83,6 +83,6 @@ RewriteRule ^(.+)$ index.php [QSA,L]
 
 ## License
 
-MIT License
+[MIT License](LICENSE)
 
 
